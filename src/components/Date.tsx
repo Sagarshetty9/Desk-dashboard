@@ -18,7 +18,7 @@ const DateComponent = () => {
      <div className="font-black text-3xl">
       {dayName}
      </div>
-     <div className="font-medium">
+     <div className="font-bold text-[20px] text-gray-400 ">
       {currentDate} {monthName}
      </div>
     </div>

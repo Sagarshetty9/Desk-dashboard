@@ -7,3 +7,18 @@ body {
   background-color: black;
   color: white;
 }
+
+.react-calendar__month-view__weekdays__weekday{
+  display: none;
+}
+
+.react-calendar__tile--now {
+   background: transparent !important;
+  color: gray !important;
+  font-weight: bolder;
+}
+
+.react-calendar__tile--now abbr {
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
