@@ -16,15 +16,17 @@ const Clock = () => {
 
   return (
     <section className="h-screen w-auto rounded-2xl border-4 border-white flex justify-center flex-col items-center">
-      <div className="    ">
-        <span className="text-[130px] font-extrabold">
+
+      {/* TIME IS BEING DISPLAYED HERE */}
+      <div className="w-full @container flex justify-center items-center">
+        <span className="text-[36cqw] font-extrabold">
           {hours}:{minutes}
         </span>
       </div>
 
+        {/* DATE AND OTHER STUFF */}
       <div className="   ">
         <span className="font-bold text-2xl">
-          {" "}
           {currentDate} | {monthName} | {year}
         </span>
       </div>

@@ -19,6 +19,14 @@ body {
 }
 
 .react-calendar__tile--now abbr {
-  text-decoration: underline dotted;
+  text-decoration: underline;
   text-underline-offset: 4px;
+  color: white;
+  font-weight: bolder;
+  color: rgb(255, 231, 15);
 }
+
+/* .react-calendar__month-view__days{
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.R4upnBIO6NyLbpmutCbipwHaEK%3Fpid%3DApi&f=1&ipt=073f6887eb9f006ad00c452bb138759fb527bdd3a0b25abafc993e76ae919e9e&ipo=images');
+} */
+

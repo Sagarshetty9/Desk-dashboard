@@ -13,12 +13,14 @@ const DateComponent = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+
   return (
-    <div className="border border-white flex flex-col justify-center items-center">
-     <div className="font-black text-3xl">
-      {dayName}
+    <div className="border border-white flex flex-col justify-center items-center rounded-2xl @CONTAINER">
+     <div className={`font-black ${dayName.length > 7 ? 'text-[3.1cqw]' : 'text-[4cqw]'}`}>
+      {dayName.toUpperCase()}  
      </div>
-     <div className="font-bold text-[20px] text-gray-400 ">
+     <div className={`font-bold text-[20px] text-gray-400 `}>
       {currentDate} {monthName}
      </div>
     </div>
