@@ -19,15 +19,16 @@ const Utility = () => {
         </div>
       </div>
 
-      <div className="flex gap-2">
-        <div className=" border w-[50%] h-20">
+      {/* WEATHER AND QUOTE */}
+      <div className="flex gap-2 ">
+        <div className=" border w-full h-20 rounded-2xl">
           <Weather/>
         </div>
-
-        <div className=" border w-[50%] h-20">Quote</div>
       </div>
 
-      <div className=" border h-full">Todo</div>
+
+      {/*TODO////////////////////////*/}
+      <section className="border h-full rounded-2xl">Todo</section>
     </section>
   );
 };

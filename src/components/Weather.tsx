@@ -1,25 +1,20 @@
-import getCurrentTemp from "../utils/weather"
-import {useState, useEffect} from 'react';
+import getCurrentTemp from "../utils/weather";
+import { useEffect, useState } from "react";
 
 const Weather = () => {
-   
-    const [weather, setWeather] = useState('')
+  const [weather, setWeather] = useState({});
 
-    useEffect(() => {
-     const interval = setInterval(() => {
-      
-     }, 100000);
-    
-     
-    }, [])
-    
+  useEffect(() => {
 
+    setInterval(() => {
+      getCurrentTemp()
+        .then(res => setWeather(res))
+    }, 10000)
+  }, []);
 
-  return (
-    <div>
-        heydsjdhskjh
-    </div>
-  )
-}
+  console.log()
 
-export default Weather
+  return <div>Here goes Weather</div>;
+};
+
+export default Weather;
