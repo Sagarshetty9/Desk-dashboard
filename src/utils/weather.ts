@@ -1,4 +1,7 @@
-async function getCurrentTemp() {
+import type { WeatherData } from "../types/weather";
+
+
+async function getCurrentTemp(): Promise<WeatherData | null> {
   try {
     const params = new URLSearchParams({
       latitude: "18.35",
@@ -10,19 +13,20 @@ async function getCurrentTemp() {
     const url = `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
 
     const response = await fetch(url);
-    
+    if (!response.ok) {
+      console.log("Failed to fetch data")
+    }
+
     const data = await response.json();
 
     return {
-      temprature: data.current.temperature_2m,
-      code: data.current.weather_code
-    }
-    
+      temperature: data.current.temperature_2m,
+      code: data.current.weather_code,
+    };
   } catch (error) {
     console.error("Error fetching temperature:", error);
     return null;
   }
 }
-
 
 export default getCurrentTemp;

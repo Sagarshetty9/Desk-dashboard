@@ -1,20 +1,31 @@
 import getCurrentTemp from "../utils/weather";
 import { useEffect, useState } from "react";
+import type { WeatherData } from "../types/weather";
 
 const Weather = () => {
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState<WeatherData | null>(null);
 
   useEffect(() => {
-
-    setInterval(() => {
-      getCurrentTemp()
-        .then(res => setWeather(res))
-    }, 10000)
+    async function fetchWeather() {
+      try {
+        console.log("Fetching data...")
+        const data = await getCurrentTemp();
+        setWeather(data);
+      } catch (error) {
+        console.log("There was problem fetching data", error);
+      }
+    }
+    fetchWeather();
   }, []);
 
-  console.log()
-
-  return <div>Here goes Weather</div>;
+  if (weather) {
+    console.log(weather);
+  }
+  return (
+      <div>
+        {weather && <p>Temperature: {weather.temperature}°C (Code: {weather.code})</p>}
+      </div>
+    );
 };
 
 export default Weather;
