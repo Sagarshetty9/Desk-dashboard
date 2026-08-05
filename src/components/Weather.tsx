@@ -1,6 +1,6 @@
-import getCurrentTemp from "../utils/weather";
+import getCurrentTemp from "../utils/weatherUtil";
 import { useEffect, useState } from "react";
-import type { WeatherData } from "../types/weather";
+import type { WeatherData } from "../types/weatherType";
 
 const Weather = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);

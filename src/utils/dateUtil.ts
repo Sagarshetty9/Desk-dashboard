@@ -1,3 +1,4 @@
+import type {FormattedDateTime} from "../types/dateType"
 
 export const days = [
   "Sunday",
@@ -24,16 +25,7 @@ export const months = [
   "December",
 ];
 
-export interface FormattedDateTime {
-  hours: number;
-  minutes: string;
-  amPm: "AM" | "PM";
-  dayName: string;
-  monthName: string;
-  currentDate: number;
-  monthIndex: number;
-  year: number;
-}
+
 
 export function getFormattedDateTime(
   date: Date = new Date()

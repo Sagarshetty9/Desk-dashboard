@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getFormattedDateTime } from "../utils/dateUtil";
+import type {FormattedDateTime} from "../types/dateType"
 
 const DateComponent = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -13,7 +14,7 @@ const DateComponent = () => {
     return () => clearInterval(interval);
   }, []);
 
-
+//Use types for dates. Lil complicated but can be done gng
 
   return (
     <div className="border border-white flex flex-col justify-center items-center rounded-2xl @CONTAINER">

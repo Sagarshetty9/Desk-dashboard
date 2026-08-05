@@ -1,4 +1,4 @@
-import type { WeatherData } from "../types/weather";
+import type { WeatherData } from "../types/weatherType";
 
 
 async function getCurrentTemp(): Promise<WeatherData | null> {
