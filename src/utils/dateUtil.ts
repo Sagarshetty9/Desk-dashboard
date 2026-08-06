@@ -1,4 +1,4 @@
-import type {FormattedDateTime} from "../types/dateType"
+import type { FormattedDateTimeType } from "../types/dateType"
 
 export const days = [
   "Sunday",
@@ -8,7 +8,7 @@ export const days = [
   "Thursday",
   "Friday",
   "Saturday",
-];
+] ;
 
 export const months = [
   "January",
@@ -29,7 +29,7 @@ export const months = [
 
 export function getFormattedDateTime(
   date: Date = new Date()
-): FormattedDateTime {
+): FormattedDateTimeType {
   const hours = date.getHours() % 12 || 12;
   const minutes = date.getMinutes().toString().padStart(2, "0");
   const amPm: "AM" | "PM" = date.getHours() >= 12 ? "PM" : "AM";

@@ -21,7 +21,7 @@ const Utility = () => {
 
       {/* WEATHER AND QUOTE */}
       <div className="flex gap-2 ">
-        <div className=" border w-full h-20 rounded-2xl">
+        <div className=" border w-full h-20 rounded-2xl flex justify-center items-center">
           <Weather/>
         </div>
       </div>

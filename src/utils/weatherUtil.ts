@@ -19,6 +19,7 @@ async function getCurrentTemp(): Promise<WeatherData | null> {
 
     const data = await response.json();
 
+    
     return {
       temperature: data.current.temperature_2m,
       code: data.current.weather_code,
