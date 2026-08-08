@@ -3,9 +3,8 @@ import { getFormattedDateTime } from "../utils/dateUtil.ts";
 
 const Clock = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-
-  const { hours, minutes, monthName, currentDate, year } =
-    getFormattedDateTime(currentTime);
+// monthName, currentDate, year 
+  const { hours, minutes} = getFormattedDateTime(currentTime);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,11 +24,11 @@ const Clock = () => {
       </div>
 
         {/* DATE AND OTHER STUFF */}
-      <div className="   ">
+      {/*<div className="   ">
         <span className="font-bold text-2xl">
           {currentDate} | {monthName} | {year}
         </span>
-      </div>
+      </div>*/}
     </section>
   );
 };

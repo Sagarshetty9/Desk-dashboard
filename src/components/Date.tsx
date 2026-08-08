@@ -5,7 +5,7 @@ import type { FormattedDateTimeType } from "../types/dateType"
 const DateComponent = () => {
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
   const dateTime: FormattedDateTimeType = getFormattedDateTime(currentTime);
-  const { dayName, currentDate, monthName } = dateTime;
+  const { dayName, currentDate, monthName,year } = dateTime;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,8 +21,8 @@ const DateComponent = () => {
      <div className={`font-black ${dayName.length > 7 ? 'text-[3.1cqw]' : 'text-[4cqw]'}`}>
       {dayName.toUpperCase()}  
      </div>
-     <div className={`font-bold text-[20px] text-gray-400 `}>
-      {currentDate} {monthName}
+     <div className={`font-bold text-xl text-gray-400 `}>
+      {currentDate} {monthName} {year}
      </div>
     </div>
   );
