@@ -1,0 +1,1 @@
+Made socket server in server.js and then imported the connection from config and passed the server to the conneection.
