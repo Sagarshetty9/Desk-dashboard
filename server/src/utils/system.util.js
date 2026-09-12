@@ -12,12 +12,12 @@ export async function getSystemInformation() {
 
   
   return {
-    cpuTemp: cpuTemperature.main,
-    cpuUsage: Math.round(cpuUsage.currentLoad),
-    totalRam: Math.round(ramInformation.total / 1024 ** 3),  //Data in bytes being converted to GB and Rounded off
-    ramUsage: Math.round(ramInformation.active / 1024 ** 3),
-    diskUsed: diskUsedInPercentage,
-    totalDiskSize:totalDisk
+    cpuTemp: cpuTemperature.main + "°C",
+    cpuUsage: Math.round(cpuUsage.currentLoad) + "%",
+    totalRam: Math.round(ramInformation.total / 1024 ** 3) + "GB",  //Data in bytes being converted to GB and Rounded off
+    ramUsage: Math.round(ramInformation.active / 1024 ** 3) + "GB",
+    diskUsed: diskUsedInPercentage + "%",
+    totalDiskSize:totalDisk + "GB"
   };
 }
 
