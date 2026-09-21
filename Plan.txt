@@ -8,6 +8,8 @@
 
 #SSH copy
 >scp -r -P 8022 dist u0_a199@10.57.14.228:
+scp -r -P 8022 dist/ u0_a199@10.57.14.228:~/dashboard     //Directly to the folder
+
 
 #Find hostname
 >hostname
@@ -18,3 +20,4 @@
 
 
 
+>>Server automatically serves the files from the Place

@@ -2,13 +2,26 @@
 
 @theme {
   /* Overrides Tailwind's default font family for the entire app */
-  --font-sans: 'ibm-plex-mono','JetBrains Mono', monospace;
-  --font-mono: 'ibm-plex-mono','JetBrains Mono', monospace;
+  --font-sans: 'IBM Plex Mono';
+  --font-mono: 'IBM Plex Mono';
 }
 body{
     background-color: black;
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

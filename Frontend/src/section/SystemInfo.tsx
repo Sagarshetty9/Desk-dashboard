@@ -19,7 +19,7 @@ const SystemInfo = () => {
   const timer = 5000;
 
   useEffect(() => {
-    const socket = io("http://10.57.14.119:65000"); //Backend links: Laptop IP on port 65000
+    const socket = io(import.meta.env.VITE_LAPTOP_IP); //Backend links: Laptop IP on port 65000
 
     socket.on("system-info", (data) => {
       setSystemInfoData({
@@ -48,7 +48,7 @@ const SystemInfo = () => {
       <SysInfoCard label={"Ram Usage"} data={SystemInfoData.ramUsage}/>
       <SysInfoCard label={"CPU Usage"} data={SystemInfoData.cpuUsage}/>
       <SysInfoCard label={"CPU temprature"} data={SystemInfoData.cpuTemp}/>
-      <SysInfoCard label={"GPU temprature"} data={SystemInfoData.diskUsed}/>
+      <SysInfoCard label={"GPU temprature"} data={"TBA"}/>
     </section>
   );
 };
