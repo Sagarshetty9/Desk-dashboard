@@ -3,11 +3,7 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import type { sysInfoType } from "../types/sysInfoType";
 
-
-
 const SystemInfo = () => {
-  
-  
   const [SystemInfoData, setSystemInfoData] = useState<sysInfoType>({
     cpuTemp: "",
     cpuUsage: "",
@@ -16,7 +12,7 @@ const SystemInfo = () => {
     diskUsed: "",
     totalDiskSize: "",
   });
-  const timer = 5000;
+  const timer = 3500;
 
   useEffect(() => {
     const socket = io(import.meta.env.VITE_LAPTOP_IP); //Backend links: Laptop IP on port 65000
@@ -45,10 +41,10 @@ const SystemInfo = () => {
   return (
     <section className="border h-full w-full flex flex-col gap-1">
       <SysInfoCard label={"Disk Usage"} data={SystemInfoData.diskUsed} />
-      <SysInfoCard label={"Ram Usage"} data={SystemInfoData.ramUsage}/>
-      <SysInfoCard label={"CPU Usage"} data={SystemInfoData.cpuUsage}/>
-      <SysInfoCard label={"CPU temprature"} data={SystemInfoData.cpuTemp}/>
-      <SysInfoCard label={"GPU temprature"} data={"TBA"}/>
+      <SysInfoCard label={"Ram Usage"} data={SystemInfoData.ramUsage} />
+      <SysInfoCard label={"CPU Usage"} data={SystemInfoData.cpuUsage} />
+      <SysInfoCard label={"CPU temprature"} data={SystemInfoData.cpuTemp} />
+      <SysInfoCard label={"GPU temprature"} data={"TBA"} />
     </section>
   );
 };

@@ -8,6 +8,7 @@
 
 #SSH copy
 >scp -r -P 8022 dist u0_a199@10.57.14.228:
+>scp -r -P 8022 dist u0_a199@10.57.14.228:~/dashboard   //Directly to folder
 
 #Find hostname
 >hostname
