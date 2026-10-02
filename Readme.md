@@ -4,7 +4,7 @@ A live system-stats display for my laptop, running on an old **Redmi 9A** Androi
 
 The laptop runs a small Node.js server that reports its stats. The phone runs a static React build in kiosk mode and polls that server, so it works as an always-on second screen.
 
-<!-- ![Desk Dashboard](docs/screenshot.jpg) -->
+ ![Desk Dashboard](screenshot/dashboardss.png)
 
 ## What it shows
 
