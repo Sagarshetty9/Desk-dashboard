@@ -12,6 +12,14 @@ export async function getSystemInformation() {
     disk.find((d) => d.mount === "/").size /
     1024 ** 3
   ).toFixed(0);
+
+  //Uptime Calulated date, hour and mins 
+  const upTimeInSeconds = si.time().uptime;
+  const days = Math.floor(upTimeInSeconds / 86400);
+  const hours = Math.floor((upTimeInSeconds % 86400) / 3600);
+  const mins = Math.floor((upTimeInSeconds % 3600) / 60);
+
+  const uptime = `${days}d ${hours}h ${mins}m`;
   const netStats = await si.networkStats();
 
   return {
@@ -21,6 +29,7 @@ export async function getSystemInformation() {
     ramUsage: Math.round(ramInformation.active / 1024 ** 3) + "GB",
     diskUsed: diskUsedInPercentage + "%",
     totalDiskSize: totalDisk + "GB",
+    uptime: uptime,
     downloadSpeed: netStats[0].rx_sec,
     uploadSpeed: netStats[0].tx_sec,
   };
