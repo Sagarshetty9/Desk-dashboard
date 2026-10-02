@@ -1,4 +1,4 @@
-import si from "systeminformation";
+import si, { networkConnections } from "systeminformation";
 
 //All systeminformation calls being made here and being exported
 
@@ -20,6 +20,7 @@ export async function getSystemInformation() {
   const mins = Math.floor((upTimeInSeconds % 3600) / 60);
 
   const uptime = `${days}d ${hours}h ${mins}m`;
+  const netStats = await si.networkStats();
 
   return {
     cpuTemp: cpuTemperature.main + "°C",
@@ -29,11 +30,17 @@ export async function getSystemInformation() {
     diskUsed: diskUsedInPercentage + "%",
     totalDiskSize: totalDisk + "GB",
     uptime: uptime,
+    downloadSpeed: netStats[0].rx_sec,
+    uploadSpeed: netStats[0].tx_sec,
   };
 }
 
-// async function test() {
-//   console.log(uptime);
+// async function testing() {
+
+//   setInterval(async () => {
+//     const netStats = await si.networkStats();
+//     console.log(netStats[0].tx_sec, netStats[0].rx_sec);
+//   }, 3000);
 // }
 
-// test();
+// testing();

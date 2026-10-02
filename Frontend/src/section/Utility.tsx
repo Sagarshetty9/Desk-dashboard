@@ -1,5 +1,4 @@
 import Clock from "../components/Clock.tsx";
-import Weather from "../components/Weather.tsx";
 import DateComponent from "../components/Date.tsx";
 
 const Utility = () => {
@@ -10,10 +9,10 @@ const Utility = () => {
         <Clock />
       </div>
 
-      {/* Weather and Date fill bottom space */}
+      {/*Date fill bottom space */}
       <div className="flex-1 w-full flex gap-1 p-1">
         <div className="w-1/2 h-full min-w-0">
-          <Weather />
+
         </div>
         <div className="w-1/2 h-full min-w-0">
           <DateComponent />
